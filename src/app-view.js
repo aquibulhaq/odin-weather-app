@@ -3,6 +3,17 @@ import {handleSubmit} from './app-controller.js';
 const mainContent = document.querySelector('main');
 const form = document.querySelector('form');
 const location = document.querySelector('#location');
+
+const table = document.querySelector('table');
+const cells = {
+  conditions: document.getElementById('conditions'),
+  temp: document.getElementById('temp'),
+  feelslike: document.getElementById('feels-like'),
+  humidity: document.getElementById('humidity'),
+  windspeed: document.getElementById('wind-speed'),
+  precipprob: document.getElementById('precip-prob'),
+};
+
 const overlay = document.querySelector('.loading-overlay');
 let isSubmitting = false;
 
@@ -31,6 +42,15 @@ form.addEventListener('submit', async (event) => {
 
 export function displayWeather(data) {
   console.log(data);
+
+  cells.conditions.textContent = data.conditions;
+  cells.temp.textContent = data.temp.toFixed(1);
+  cells.feelslike.textContent = data.feelslike.toFixed(1);
+  cells.humidity.textContent = data.humidity;
+  cells.windspeed.textContent = data.windspeed;
+  cells.precipprob.textContent = data.precipprob;
+
+  table.hidden = false;
 }
 
 export function displayError(error) {
