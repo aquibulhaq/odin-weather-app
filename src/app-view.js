@@ -1,17 +1,32 @@
 import {handleSubmit} from './app-controller.js';
 
+const mainContent = document.querySelector('main');
 const form = document.querySelector('form');
 const location = document.querySelector('#location');
+const overlay = document.querySelector('.loading-overlay');
+let isSubmitting = false;
 
-form.addEventListener('submit', (event) => {
+function setPageLocked(locked) {
+  isSubmitting = locked;
+  overlay.hidden = !locked;
+  mainContent.inert = locked;
+}
+
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
+
+  if (isSubmitting) {
+    return;
+  }
 
   location.value = location.value.trim();
   if (!form.reportValidity()) {
     return;
   }
 
-  handleSubmit(location.value);
+  setPageLocked(true);
+  await handleSubmit(location.value);
+  setPageLocked(false);
 });
 
 export function displayWeather(data) {

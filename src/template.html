@@ -6,12 +6,16 @@
     <title>Odin Weather App</title>
   </head>
   <body>
-    <h1>Odin Weather App</h1>
+    <main>
+      <h1>Odin Weather App</h1>
 
-    <form novalidate>
-      <label for="location">Location:</label>
-      <input type="search" name="location" id="location" required autofocus>
-      <button type="submit">Submit</button>
-    </form>
+      <form novalidate>
+        <label for="location">Location:</label>
+        <input type="search" name="location" id="location" required autofocus>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <div class="loading-overlay" hidden>Submitting...</div>
   </body>
 </html>
