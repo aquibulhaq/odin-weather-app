@@ -10,9 +10,23 @@
       <h1>Odin Weather App</h1>
 
       <form novalidate>
-        <label for="location">Location:</label>
-        <input type="search" name="location" id="location" required autofocus>
-        <button type="submit">Submit</button>
+        <div class="form-fields">
+          <label for="location" class="field-label">Location</label>
+          <input type="search" name="location" id="location" required autofocus>
+
+          <span class="field-label">Temperature Unit</span>
+          <div class="radio-group">
+            <input type="radio" name="tempUnit" id="celsius" value="C" checked>
+            <label for="celsius">°C</label>
+
+            <input type="radio" name="tempUnit" id="fahrenheit" value="F">
+            <label for="fahrenheit">°F</label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+        </div>
       </form>
 
       <table hidden>

@@ -34,6 +34,33 @@ body {
   white-space: nowrap;
 }
 
+form {
+  margin: 1rem 0;
+  max-width: 800px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 0.5rem;
+}
+
+.field-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field-label::after {
+  content: ':';
+}
+
+.form-actions {
+  text-align: right;
+}
+
 table {
   margin-top: 1.5rem;
   border-collapse: collapse;
