@@ -1,7 +1,4 @@
 import './style.css';
-import {fetchWeather, processWeather} from './app-model.js';
+import './app-view.js';
 
 console.log('Odin Weather App');
-
-window.fetchWeather = fetchWeather;
-window.processWeather = processWeather;
