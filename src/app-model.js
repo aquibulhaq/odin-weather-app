@@ -24,3 +24,7 @@ export function processWeather(data) {
     data.currentConditions;
   return {conditions, icon, temp, feelslike, humidity, windspeed, precipprob};
 }
+
+export function convertTemperature(celsius, unit) {
+  return unit === 'C' ? celsius : celsius * 1.8 + 32;
+}
