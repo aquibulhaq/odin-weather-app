@@ -30,6 +30,32 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+table {
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 6px 10px;
+  text-align: center;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  min-width: 100px;
+}
+
 .loading-overlay {
   position: fixed;
   inset: 0;
