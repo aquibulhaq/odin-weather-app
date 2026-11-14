@@ -22,3 +22,9 @@ export async function fetchWeather(location) {
     console.error(err);
   }
 }
+
+export function processWeather(data) {
+  const {conditions, icon, temp, feelslike, humidity, windspeed, precipprob} =
+    data.currentConditions;
+  return {conditions, icon, temp, feelslike, humidity, windspeed, precipprob};
+}
