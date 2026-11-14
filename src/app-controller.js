@@ -2,11 +2,14 @@ import {fetchWeather, processWeather} from './app-model.js';
 import {displayWeather, displayError} from './app-view.js';
 
 export async function handleSubmit(location) {
-  const rawData = await fetchWeather(location);
-  if (rawData === undefined) {
-    displayError('API Error');
+  let rawData;
+  try {
+    rawData = await fetchWeather(location);
+  } catch (err) {
+    displayError(err);
     return;
   }
+
   const processedData = processWeather(rawData);
   displayWeather(processedData);
 }
