@@ -1,4 +1,5 @@
 import {merge} from 'webpack-merge';
+import {InjectManifest} from 'workbox-webpack-plugin';
 import common from './webpack.common.js';
 
 export default merge(common, {
@@ -17,4 +18,9 @@ export default merge(common, {
       },
     },
   },
+  plugins: [
+    new InjectManifest({
+      swSrc: './src/service-worker.js',
+    }),
+  ],
 });
