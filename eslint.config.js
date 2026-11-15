@@ -21,7 +21,10 @@ export default defineConfig([
       'no-unused-vars': ['error', {args: 'none', ignoreRestSiblings: true}],
     },
   },
-  {files: ['src/**/*.js'], languageOptions: {globals: globals.browser}},
+  {
+    files: ['src/**/*.js'],
+    languageOptions: {globals: {...globals.browser, process: 'readonly'}},
+  },
   {
     files: ['webpack.*.js', 'eslint.config.js'],
     languageOptions: {globals: globals.nodeBuiltin},
