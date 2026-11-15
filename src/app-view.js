@@ -49,16 +49,20 @@ form.addEventListener('submit', async (event) => {
   setPageLocked(false);
 });
 
-export function displayWeather(data, unit) {
-  console.log(data);
-
-  cells.conditions.textContent = data.conditions;
-
+export function displayTemperatures(data, unit) {
   cells.temp.textContent = data.temp.toFixed(1);
   cells.tempUnit.textContent = `°${unit}`;
 
   cells.feelslike.textContent = data.feelslike.toFixed(1);
   cells.feelslikeUnit.textContent = `°${unit}`;
+}
+
+export function displayWeather(data, unit) {
+  console.log(data);
+
+  cells.conditions.textContent = data.conditions;
+
+  displayTemperatures(data, unit);
 
   cells.humidity.textContent = data.humidity;
   cells.windspeed.textContent = data.windspeed;
