@@ -8,4 +8,13 @@ export default merge(common, {
     filename: '[name].[contenthash].js',
     cssFilename: '[name].[contenthash].css',
   },
+  optimization: {
+    minimize: {
+      html: {
+        collapseWhitespace: 'smart',
+        removeEmptyAttributes: false,
+        removeRedundantAttributes: 'smart',
+      },
+    },
+  },
 });
