@@ -1,7 +1,9 @@
+import {API_ORIGIN, API_PATH} from './api-config.js';
+
 export async function fetchWeather(location) {
   const url = new URL(
-    `VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(location)}/today`,
-    'https://weather.visualcrossing.com',
+    `${API_PATH}/${encodeURIComponent(location)}/today`,
+    API_ORIGIN,
   );
   url.searchParams.set('unitGroup', 'metric');
   url.searchParams.set('include', 'current');
