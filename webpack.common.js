@@ -5,5 +5,6 @@ export default {
   output: {
     path: path.resolve(import.meta.dirname, 'dist'),
     clean: true,
+    htmlFilename: 'index.html',
   },
 };
